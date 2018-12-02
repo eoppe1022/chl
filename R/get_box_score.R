@@ -99,7 +99,7 @@ get_box_score <- function(..., progress = TRUE) {
       mutate(league = league) %>%
       mutate(game_url = url) %>%
       select(time, period, game_strength, team, goal, primary_assist, secondary_assist, season, league, game_url) %>%
-      mutate_all(str_squish) %>%
+      mutate_all(stringr::str_squish) %>%
       mutate_all(~na_if(., ""))
     
     if (progress) {pb$tick()}
