@@ -71,7 +71,7 @@ get_box_score <- function(..., progress = TRUE) {
       mutate(goal = stringr::str_split(goal, "\\(", simplify = TRUE, n = 2)[,1]) %>%
       mutate(assists = stringr::str_split(messy_data, "Assists\\:", simplify = TRUE, n = 2)[,2]) %>%
       mutate(assists = stringr::str_split(assists, "\\+/-", simplify = TRUE, n = 2)[,1]) %>%
-      mutate(game_strength = case_when(str_detect(messy_data, "Short Handed") & stringr::str_detect(messy_data, "Empty Net") ~ "SH EN",
+      mutate(game_strength = case_when(stringr::str_detect(messy_data, "Short Handed") & stringr::str_detect(messy_data, "Empty Net") ~ "SH EN",
                                        stringr::str_detect(messy_data, "Power Play") & stringr::str_detect(messy_data, "Empty Net") ~ "PP EN",
                                        stringr::str_detect(messy_data, "Short Handed") & stringr::str_detect(messy_data, "Penalty Shot") ~ "SH PS",
                                        stringr::str_detect(messy_data, "Power Play") & stringr::str_detect(messy_data, "Penalty Shot") ~ "PP PS",
