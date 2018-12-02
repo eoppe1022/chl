@@ -14,3 +14,16 @@ get_box_score(..., progress = TRUE)
 \description{
 Returns a data frame of the box score scoring summary (including goal, primary assist, and secondary assist) for specified URL.
 }
+\examples{
+## Use get_schedule() to get the games and URLs desired
+games <- get_schedule("OHL", "2018-19")
+
+## Easy peasy get box score scoring summary data
+get_box_score(games)
+
+## If you want to see 1 game, try using dplyr::slice to only select the 1st game
+games \%>\% 
+  slice(1) \%>\% 
+  get_box_score()
+
+}

@@ -18,3 +18,11 @@ get_schedule(league, season, ..., progress = TRUE)
 \description{
 Returns a data frame of league schedule and game data for user supplied leagues & seasons.
 }
+\examples{
+get_schedule("OHL", "2018-19")
+
+get_schedule("QMJHL", "1999-00", progress = FALSE)
+
+get_schedule(c("OHL", "WHL", "QMJHL"), c("2018-19", "2017-18"))
+
+}

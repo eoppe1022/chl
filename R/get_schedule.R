@@ -7,7 +7,7 @@
 #' @param progress Sets a Progress Bar. Defaults to \code{TRUE}.
 #' @param ... Allows the user to supply other information to the function. If you don't know what this means, then don't worry about it.
 #' @examples 
-#' get_schedule("OHL", "2018-19)
+#' get_schedule("OHL", "2018-19")
 #' 
 #' get_schedule("QMJHL", "1999-00", progress = FALSE)
 #' 
@@ -269,7 +269,7 @@ get_schedule <- function(league, season, ..., progress = TRUE) {
     
     away_goals <- goals %>%
       filter(row_number() %% 2 == 1) %>%
-      set_names("away_goals")
+      purrr::set_names("away_goals")
     
     home_goals <- goals %>%
       filter(row_number() %% 2 == 0) %>%

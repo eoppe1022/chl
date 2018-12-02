@@ -6,7 +6,7 @@
 #' @param progress Sets a Progress Bar. Defaults to \code{TRUE}.
 #' @examples 
 #' ## Use get_schedule() to get the games and URLs desired
-#' games <- get_schedule("OHL", "2018-19)
+#' games <- get_schedule("OHL", "2018-19")
 #' 
 #' ## Easy peasy get box score scoring summary data
 #' get_box_score(games)
